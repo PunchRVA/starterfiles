@@ -1,0 +1,65 @@
+.four-up {
+  @extend %plain-list;
+  @include breakpoint($baby) {
+    display: table;
+    display: block;
+    table-layout: fixed;
+    width: 100%;
+    &:last-of-type {
+      margin-bottom: 2em;
+    }
+  }
+
+  
+  & &__item {
+    @include breakpoint($baby) {
+      display: table-cell;
+      display: inline-block;
+      height: 100%;
+      width: 23%;
+      padding: 0 2% 0 0%;
+      // max-width: 33%;
+      margin-right: -5px;
+      vertical-align: top; 
+      cursor: pointer;
+    }
+
+
+
+  }
+
+  &__photo {
+    position: relative;
+
+    width: 100%;
+    padding-top: 85%;
+    background-color: #eee;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+
+  }
+  &__title {
+    @extend %accent-font;
+  }
+
+  &__caption-hidden {
+    color: #fff;
+    padding: .5em;
+    width: 100%;
+    background-color: rgba( $greyblue ,.9);
+    bottom: -4em;
+    // top: 100%;
+    transition: all .25s;
+
+    @include breakpoint($baby) {
+      position: absolute;
+    }
+
+    .four-up__photo:hover & {
+      bottom: 0;
+      // top: auto;
+    }
+  }
+}

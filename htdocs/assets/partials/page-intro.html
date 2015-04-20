@@ -1,0 +1,15 @@
+<h1 class="page__title {{ segment_1|lower }}">{{ segment_1|deslugify|lower }}</h1>
+<div class="page__intro">
+  {{ if last_segment != "contact" }}
+  <div class="page__navigation">
+    <ul class="page__subnav">
+      {{nav from="{segment_1}" max_depth="1" }}
+        <li class="page__subnav-item{{ if is_current }}--active{{ endif }}"><a href="{{ url }}">{{ title }}</a></li>
+      {{/nav}}
+    </ul>
+  </div>
+  {{ endif }}
+  <div class="page__intro-text">
+    {{intro|markdown|widont}}
+  </div>
+</div>

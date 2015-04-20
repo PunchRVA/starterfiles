@@ -1,0 +1,43 @@
+.news {
+  @extend %plain-list;
+
+  &.page {
+    padding-bottom: 4em;
+    margin-bottom: -1em;
+  }
+
+  &--item {
+    padding-bottom: 2em;
+  }
+
+  &--title {
+    font-weight: bold;
+    font-size: 20px;
+    font-size: 1.5em;
+    color: $deepblue;
+  }
+
+  &--date {
+    color: $gray;
+    font-style: italic;
+  }
+
+  &--link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-entry {
+    &__date {
+      font-size: .85em;
+      color: $greyblue;
+      text-transform: uppercase;
+    }
+
+    &__content a:hover {
+      color: $deepblue;
+    }
+  }
+
+}

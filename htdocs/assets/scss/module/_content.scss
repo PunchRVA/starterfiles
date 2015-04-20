@@ -1,0 +1,78 @@
+.content {
+  @extend %main-font;
+  padding: 0 1em;
+
+  @include breakpoint($baby) {
+    padding: map-get($padding, med);
+  }
+
+  @include breakpoint($desk) {
+    padding: map-get($padding, large);
+  }
+
+  @include breakpoint($super-wide) {
+    padding: map-get($padding, med) map-get($padding, large);
+  }
+
+
+  h1,
+  h2,
+  h3,
+  &__header {
+    color: $deepblue;
+    font-weight: normal;
+    font-size: 25px;
+    font-size: 2em;
+    margin: 0;
+    margin-top: 1em;
+
+    & + p {
+      margin-top: .5em;
+    }
+
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 1.75em;
+    }
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
+
+  p + h2,
+  p + h3 {
+    margin-top: 2.5em;
+  }
+
+  p:last-of-type {
+    padding-bottom: 1em;
+    margin-bottom: 0;
+  }
+
+  p + ul {
+    margin-top: 0;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style: none;
+    padding-left: 1em;
+    position: relative;
+
+    &:not(.four-up__item):before {
+      content: '+';
+      color: $deepblue;
+      font-weight: bold;
+      position: absolute;
+      left: -.0625em;
+      left: 0;
+    }
+  }
+}

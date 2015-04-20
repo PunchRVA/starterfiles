@@ -1,0 +1,30 @@
+.body {
+  background-image: url('../img/ml-texture.jpg');
+  position: relative;
+
+  &__container {
+    @extend %content-section;
+    background-color: #fff;
+  }
+
+  &__headline {
+    @extend %main-font;
+    font-weight: normal;
+    margin: 0;
+    padding: .5em 1em;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+
+    font-size: 20px;
+    font-size: 1.5em;
+    color: $deepblue;
+    background-color: #fff;
+
+    @include breakpoint($baby) {
+      padding-top: .5em;
+      font-size: 2em;
+      padding-right: 25%;
+      line-height: 1.1;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.person {
+  // @extend .clearfix;
+
+  border-top: 1px solid $gray;
+  padding-top: 1.5em;
+
+  @include breakpoint($tab) {
+    display: table-row;
+  }
+
+  &__bio {
+    vertical-align: top;
+    display: table-cell;
+    width: 100%;
+  }
+
+  &__headshot {
+    display: table-cell;
+    vertical-align: top;
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    @include breakpoint($desk) {
+      // max-width: 25%;
+    }
+  }
+
+  &__name {
+    color: #003951;
+    margin: 0;
+    padding-top: 0;
+    line-height: 1;
+    font-weight: 400;
+    font-size: 2em;
+  }
+
+
+  &__title {
+    font-weight: bold;
+    color: $dkyellow;
+    margin: 0;
+    padding-top: 0;
+    text-transform: uppercase;
+  }
+
+  &__gap {
+    border: none;
+    margin: 2.5em;
+  }
+
+}

@@ -1,0 +1,210 @@
+.header {
+  @extend %content-section;
+  display: table;
+  width: 100%;
+  height: 60px;
+
+  padding-bottom: 10px;
+  padding-left: 1em;
+  padding-top: 1em;
+
+  background-color: #fff;
+  position: relative;
+
+  
+  @include breakpoint($baby) {
+    padding: 2em;
+    padding-right: 1em
+  }
+  
+  @include breakpoint($margins-appear) {
+    padding: 2em
+  }
+  
+  @include breakpoint($super-wide) {
+    padding: 1.5em 2em 1.5em 2em
+  }
+
+  &__logo {
+    display: table-cell;
+    width: 50%;
+    vertical-align: bottom;
+    // max-width: 160px;
+    
+
+    @include breakpoint($tab) {
+      // padding: 1em 0 1em 1.25em;
+      width: 218px;
+    }
+    @include breakpoint($desk) {
+      // width: 40%;
+      width: auto;
+      max-width: 260px;
+      // padding: 1em 1.25em;
+    }
+
+    @include breakpoint($margins-appear) {
+      max-width: 16.25em;
+    }
+    // padding: 1%;
+    padding-bottom: 0;
+
+
+    svg {
+      // max-width: 9999999px;
+      // max-height: 50px;
+
+      @include breakpoint($baby) {
+        max-height: 80px;
+      }
+
+      @include breakpoint($desk) {
+        max-height: 133px;
+        max-height: 70px;
+        width: 192px;
+      }
+
+      @include breakpoint($margins-appear) {
+        max-height: 4.375em;
+        width: 12em;
+      }
+    }
+  }
+
+  &__nav {
+    display: table-cell;
+    vertical-align: bottom;
+    @include breakpoint($baby) {
+      position: relative;
+    }
+  }
+
+
+  &__icons {
+    position: absolute;
+    top: 1.75em;
+    right: 2em;
+    width: 5em;
+    @include breakpoint($baby) {
+      top: 0;
+    }
+  }
+
+  &__search {
+    max-width: 2em;
+    display: inline-block;
+    display: none;
+    float: right;
+    color: #fff;
+    
+    svg {
+      height: 1.5em;
+      width: 1em;
+    }
+  }
+
+  &__hamburger {
+    display: inline-block;
+    max-width: 1.5em;
+    height: 1em;
+
+    @include breakpoint($baby) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  $wedgewidth-mobile: 10px;
+  $wedgewidth-baby: 20px;
+  $wedgewidth-tab: 80px;
+  $wedgewidth-margins: 6em;
+
+  &__yellowWedge {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: .9;
+
+    height: 100%;
+    width: 35px;
+    right: $wedgewidth-mobile;
+
+    @include breakpoint($baby) {
+      // height: 100%;
+      width: 70px;
+      right: $wedgewidth-baby;
+    }
+
+    @include breakpoint($tab) {
+      // height: 100%;
+      width: 70px;
+      right: $wedgewidth-tab;
+    }
+
+    @include breakpoint($margins-appear) {
+      right: $wedgewidth-margins;
+      width: 4em;
+    }
+
+
+
+    .homepage & {
+      height: 360px;
+      height: 28em;
+      width: 110px;
+      right: 0;
+
+      @include breakpoint($baby) {
+        right: -.5px;
+        height: 37em;
+        width: 23%;
+      }
+
+      @include breakpoint($tab) {
+        width: 200px;
+        // height: 37em;
+      }
+
+      // @include breakpoint($desk) {
+      //   width: 200px;
+      //   height: 37em;
+      // }
+      
+      @include breakpoint($margins-appear) {
+        // height: 620px;
+        // height: 37em;
+        width: 20%;
+      }
+    }
+  }
+  // Adding color behind wedge for non- homepage pages.
+  &:after {
+    position: absolute;
+    height: 100%;
+    content: '';
+    background-color: $yellow;
+    top: 0;
+    right: 0;
+    opacity: .9;
+    width: $wedgewidth-mobile;
+
+    .homepage & {
+      opacity: 0;
+    }
+    @include breakpoint($baby) {
+      width: $wedgewidth-baby;
+    }
+    @include breakpoint($tab) {
+      width: $wedgewidth-tab;
+    }
+
+    @include breakpoint($margins-appear) {
+      width: $wedgewidth-margins;
+    }
+  }
+
+  transition: margin-top 1s;
+  &--show-mobile-nav {
+    margin-top: 160px;
+  }
+}

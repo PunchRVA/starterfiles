@@ -1,0 +1,43 @@
+.three-up {
+  // display: table;
+
+  @include breakpoint($baby) {
+    padding: .2em;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    // width: 49%;
+    padding-bottom: 1.5em;
+
+    @include breakpoint($baby) {
+      padding-right: 1.5em;
+    }
+    @include breakpoint($tab - 11em) {
+      width: 49%;
+    }
+    @include breakpoint($desk) {
+      width: 32.5%;
+    }
+
+    &:nth-of-type(3n) {
+      padding-right: 0;
+    }
+
+  }
+  &__photos {}
+  &__header {
+    @extend %accent-font;
+    color: $deepblue;
+    font-weight: normal;
+  }
+  &__description {}
+
+  &__link {
+    text-decoration: none;
+    &:hover .three-up__header {
+      text-decoration: underline;
+    }
+  }
+}

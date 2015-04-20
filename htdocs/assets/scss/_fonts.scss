@@ -1,0 +1,51 @@
+// NOvecento
+// http://www.fontsquirrel.com/fonts/novecento-wide
+@font-face {
+    font-family: 'accent_normal';
+    src: url('/_themes/ml-bell/fonts/Novecentosanswide-Normal-webfont.eot');
+    src: url('/_themes/ml-bell/fonts/Novecentosanswide-Normal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_themes/ml-bell/fonts/Novecentosanswide-Normal-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'accent_normal';
+    src: url('/_themes/ml-bell/fonts/Novecentosanswide-Bold-webfont.eot');
+    src: url('/_themes/ml-bell/fonts/Novecentosanswide-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_themes/ml-bell/fonts/Novecentosanswide-Bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+%accent-font {
+  font-family: 'accent_normal';
+  @include font-smoothing();
+  text-transform: uppercase;
+}
+
+@font-face {
+    font-family: 'accent_narrow';
+    src: url('/_themes/ml-bell/fonts/Novecentosanswide-Light-webfont.eot');
+    src: url('/_themes/ml-bell/fonts/Novecentosanswide-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/_themes/ml-bell/fonts/Novecentosanswide-Light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+%accent-narrow {
+  font-family: 'accent_narrow';
+}
+
+
+// Fira Sans
+// http://www.fontsquirrel.com/fonts/fira-sans
+@font-face {
+    font-family: 'fira_sans';
+    src: url('/_themes/ml-bell/fonts/FiraSans-Light.eot');
+    src: url('/_themes/ml-bell/fonts/FiraSans-Light.eot?#iefix') format('embedded-opentype'),
+         url('/_themes/ml-bell/fonts/FiraSans-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+%main-font {
+  font-family: 'fira_sans';
+}

@@ -1,0 +1,41 @@
+//Breakpoints
+
+// Usage:
+// @include breakpoint($basic) {
+//   content: 'Basic Media Query';
+// }
+// @include breakpoint($pair) {
+//   content: 'Paired Media Query';
+// }
+
+$baby: 28em;
+$tab: 46em;
+$desk: 64em;
+$wall: 9999em;
+
+$margins-appear: 1200px;
+$super-wide: 1700px;
+
+// .header__logo:after {
+//   content: 'mobile';
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+
+//   @include breakpoint($baby) {
+//     content: 'baby';
+//   }
+
+//   @include breakpoint($tab) {
+//     content: 'tab';
+//   }
+
+//   @include breakpoint($desk) {
+//     content: 'desk';
+//   }
+
+//   @include breakpoint($margins-appear) {
+//     content: 'margins-appear';
+//   }
+// }

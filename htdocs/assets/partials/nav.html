@@ -1,0 +1,74 @@
+<div class="header">
+  <div class="header__logo">
+    <!-- <a href="/"><svg><use xlink:href="#mlb-logo" height="100%" ></use></svg></a> -->
+    <a href="/"><svg viewBox="0 0 100 36.7"><?php include_once("_themes/ml-bell/img/mlbell-logo.svg"); ?></svg></a>
+  </div>
+
+  <nav class="header__nav">
+    <div class="header__icons">
+      <svg class="header__hamburger">
+          <use xlink:href="#hamburger"></use>
+      </svg>
+      <div class="header__search">
+        <a href="/services" class="header__search">
+          <svg class="search">
+            <use xlink:href="#search"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <ul class="client-nav">
+      <li class="client-nav__item"><a href="http://ftp.mlbell.com:26000/" class="client-nav__link">Plan Room</a></li>
+      <li class="client-nav__item"><a href="/progress" class="client-nav__link">Client Access</a></li>
+    </ul>
+    <ul class="main-nav">
+      {{ nav from="/" max_depth="1" exclude="progress" }}
+      <li class="main-nav__item{{ if is_current || is_parent }}--active{{ endif }}">
+        <a href="{{ url }}" class="main-nav__link">{{title}}</a>
+      </li>
+      {{ /nav }}
+    </ul>
+  </nav>
+  <svg class="header__yellowWedge" preserveAspectRatio="none" viewBox="0 0 42 100">
+    <polygon fill="#FDB727" points="15.944,0 0,100 43,100 43,0 "/>
+  </svg>
+</div>
+
+
+
+<div class="hero">
+  <div class="hero__beauty" style="{{if hero}}background-image:url('{{hero}}'){{endif}}">
+  </div>
+  <div class="hero__container">
+    {{if current_url == homepage}}
+    <nav class="detail-nav--desk">
+      <ul class="detail-nav__list--desk">
+        <li class="detail-nav__item--desk">
+          <a href="http://ftp.mlbell.com:26000/" class="detail-nav__link">
+            <svg class="detail-nav__icon plan">
+              <use xlink:href="#nav-plan-room"></use>
+            </svg>
+            <p class="detail-nav__text">Plan Room</p>
+          </a>
+        </li>
+        <li class="detail-nav__item--desk">
+          <a href="/who-we-are/licenses" class="detail-nav__link">
+            <svg class="detail-nav__icon">
+              <use xlink:href="#nav-us"></use>
+            </svg>
+            <p class="detail-nav__text">Licensed States</p>
+          </a>
+        </li>
+        <li class="detail-nav__item--desk">
+          <a href="/progress" class="detail-nav__link">
+            <svg class="detail-nav__icon">
+              <use xlink:href="#nav-client"></use>
+            </svg>
+            <p class="detail-nav__text">Client Access</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    {{endif}}
+  </div>
+</div>

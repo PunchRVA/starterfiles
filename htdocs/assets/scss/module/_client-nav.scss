@@ -1,0 +1,35 @@
+.client-nav {
+  @extend %plain-list;
+  @extend %accent-font;
+  display: none;
+  visibility: hidden;
+
+  position: absolute;
+  width: 8em;
+  right: 0;
+  top: 2.25em;
+  top: 0;
+  text-align: right;
+
+  font-size: 14px;
+  font-size: .8em;
+  color: #fff;
+
+  @include breakpoint($tab) {
+    display: block;
+    visibility: visible;
+
+    .homepage & {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__item {
+    padding-bottom: .25em;
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+}

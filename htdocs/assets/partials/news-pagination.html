@@ -1,0 +1,11 @@
+{{ entries:pagination }}
+  <div class="pagination">
+  {{ if previous_page }}
+      <a href="{{ previous_page }}">&laquo; Newer news</a>
+  {{ endif }}
+  |
+  {{ if next_page }}
+      <a href="{{ next_page }}">Older news &raquo;</a>
+  {{ endif }}
+  </div>
+{{ /entries:pagination }}

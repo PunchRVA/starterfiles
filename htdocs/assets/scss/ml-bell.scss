@@ -1,0 +1,56 @@
+@import "lib/breakpoint"
+        , "vars"
+        , "mixins"
+        , "fonts"
+        , "media-queries"
+        , "layout"
+        
+        , "module/page"
+        , "module/content"
+        , "module/gallery"
+
+        , "module/header"
+        , "module/main-nav"
+        , "module/hero"
+        , "module/body"
+        , "module/detail-nav"
+        , "module/industries"
+        , "module/clients"
+        , "module/footer"
+        , "module/social-link"
+        , "module/three-up"
+        , "module/four-up"
+        , "module/outtro"
+        , "module/photogroup"
+        , "module/client-nav"
+        , "module/news"
+        , "module/pagination"
+        , "module/contact-form"
+        , "module/client-photos"
+        , "module/bio"
+        
+        
+        , "z-index"
+        ;
+
+* {
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $gray;
+
+}
+
+.svg-load {
+  display: none;
+  visibility: hidden;
+}
+
+svg {
+  display: inline-block;
+  max-width: 100%;
+}

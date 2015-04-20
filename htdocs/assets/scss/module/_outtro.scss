@@ -1,0 +1,66 @@
+.outtro {
+  background-color: $ltgray;
+  padding: 1em;
+  padding-top: 1.5em;
+  padding-bottom: 3em;
+
+
+  @include breakpoint($baby) {
+    padding: map-get($padding, med);
+    margin: map-get($padding, med) * -1;
+    margin-top: 2em;
+  }
+
+  @include breakpoint($desk) {
+    padding: map-get($padding, large);
+    margin: map-get($padding, large) * -1;
+    margin-top: 2em;
+  }
+
+
+  // @include breakpoint($margins-appear) {
+  //   margin-left: -1em;
+  //   margin-right: -1em;
+  // }
+
+  &__header,
+  & h1, 
+  & h2, 
+  & h3 {
+    color: $deepblue;
+    margin-bottom: 0;
+
+    & + p,
+    & + ul {
+      margin-top: 0;
+    }
+  }
+  &__copy {}
+  &__featured-list,
+  & ul {
+    @extend %plain-list;
+  }
+  &__featured-item,
+  & li {
+    &:before {
+      // @extend %accent-font;
+      content: '+ ';
+      color: $deepblue;
+      font-weight: bold;
+    }
+  }
+
+  & p:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  p + ul {
+    margin-top: 0;
+  }
+  ul {
+    margin-bottom: .5em;
+    + p {
+      margin-top: 2em;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+%content-section {
+  @include breakpoint($margins-appear) {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+body {
+  position: relative;
+  @include breakpoint($margins-appear) {
+    font-size: 1.25vw;
+  }
+
+  @include breakpoint($super-wide) {
+    font-size: 1.1vw;
+  }
+}
