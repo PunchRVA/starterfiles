@@ -1,6 +1,12 @@
+# CMS Stuff #
+######################
 _cache/*
+
+# Node Stuff #
+######################
 node_modules/*
 node_modules/
+npm-debug.log
 
 # OS generated files #
 ######################
