@@ -1,0 +1,29 @@
+@import "global-partials/functions"
+        , "global-partials/vars"
+        , "global-partials/mixins"
+        , "global-partials/flexboxgrid"
+        
+        , "app-partials/z-index"
+        , "app-partials/fonts"
+        ;
+
+* {
+  font-family: inherit;
+  color: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+}
+
+.svg-load {
+  display: none;
+  visibility: hidden;
+}
+
+svg {
+  display: inline-block;
+  max-width: 100%;
+}
