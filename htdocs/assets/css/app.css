@@ -515,6 +515,15 @@
   .offset-11--wall {
     margin-left: 91.667%; } }
 
+* {
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit; }
+
+body {
+  font-size: 100%;
+  margin: 0; }
+
 .gallery__modal {
   z-index: 3; }
 
@@ -551,14 +560,6 @@
   src: url('/_themes/ml-bell/fonts/FiraSans-Light.eot?#iefix') format('embedded-opentype'), url('/_themes/ml-bell/fonts/FiraSans-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal; }
-
-* {
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box; }
-
-body {
-  margin: 0; }
 
 .svg-load {
   display: none;

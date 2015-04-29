@@ -1,22 +1,19 @@
-@import "global-partials/functions"
-        , "global-partials/vars"
-        , "global-partials/mixins"
-        , "global-partials/flexboxgrid"
-        
-        , "app-partials/z-index"
-        , "app-partials/fonts"
-        ;
+// Global Partials //
+@import 'global-partials/functions';
+@import 'global-partials/vars';
+@import 'global-partials/mixins';
+@import 'global-partials/flexboxgrid';
+@import 'global-partials/normalize';
 
-* {
-  font-family: inherit;
-  color: inherit;
-  box-sizing: border-box;
-}
+// Shared Partials //
+@import 'shared-partials/display-grid';
 
-body {
-  margin: 0;
-
-}
+// Application Partials //
+@import 'app-partials/zindex';
+@import 'app-partials/typography';
+// @import 'app-partials/header';
+// @import 'app-partials/hero';
+// @import 'app-partials/footer';
 
 .svg-load {
   display: none;

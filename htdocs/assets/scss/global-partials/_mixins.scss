@@ -1,28 +1,40 @@
-@mixin font-smoothing(){
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-
-%plain-list {
+@mixin plain-list() {
   margin: 0;
   padding: 0;
-  list-style: none;
+  
+  li {
+    list-style: none;
+  }  
+}
 
-  a {
-    text-decoration: none;
+@mixin inline-list() {
+  @include plain-list();
+  
+  li {
+    display: inline;
   }
 }
 
+// all the centered elements
+@mixin centered-element($width:$row-width) {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 0 $column-gutter/2 1.2rem;
+  width: $width;
+}
 
-.clearfix {
-  zoom:1; /* For IE 6/7 (trigger hasLayout) */
-  
-  &:before,
-  &:after {
-    content:"";
-    display:table;
+//block area spacing
+@mixin block-area-spacing($centered:false) {
+  @if ($centered) {
+    margin: 2em auto 0;
+  } @else {
+    margin: 2em 0 0;    
   }
-  &:after {
-    clear:both;
-  }
+  padding: 1em 0 2em;
+}
+
+//for less faux-bold looking fonts in Webkit
+@mixin font-smoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

@@ -1,0 +1,75 @@
+$body-font-family: "ff-dagny-web-pro", sans-serif;
+$body-font-size: rem-calc(18);
+$body-font: 400 #{$body-font-size}/1.2em $body-font-family;
+
+$accent-font-family: "ff-tisa-web-pro", serif;
+$accent-font: italic 400 #{$body-font-size}/1.2em $accent-font-family;
+
+$heading-font-weight: 700 !default;
+
+$h1-font-size: rem-calc(72) !default;
+$h2-font-size: 1.5em !default;
+$h3-font-size: 1.17em !default;
+$h4-font-size: 1em !default;
+$h5-font-size: .83em !default;
+$h6-font-size: .75em !default;
+
+$h1-margin: .67em 0 !default;
+$h2-margin: .83em 0 !default;
+$h3-margin: 1em 0 !default;
+$h4-margin: 1.33em 0 !default;
+$h5-margin: 1.67em 0 !default;
+$h6-margin: 2.33em 0 !default;
+
+$default-color: #000 !default;
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: $body-font-family;
+}
+
+// Addresses margins handled incorrectly in IE6/7
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: $accent-font-family;
+  font-size: $h1-font-size;
+  font-weight: $heading-font-weight;
+  margin: $h1-margin;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  font-weight: $heading-font-weight;
+  margin: $h2-margin;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  font-weight: $heading-font-weight;
+  margin: $h3-margin;
+}
+
+h4 {
+  font-size: $h4-font-size;
+  font-weight: $heading-font-weight;
+  margin: $h4-margin;
+}
+
+h5 {
+  font-size: $h5-font-size;
+  font-weight: $heading-font-weight;
+  margin: $h5-margin;
+}
+
+h6 {
+  font-size: $h6-font-size;
+  font-weight: $heading-font-weight;
+  margin: $h6-margin;
+}

@@ -1,18 +1,20 @@
 //Colors
-$orange:#f7971c;
-$yellow:#f9be00;
-$blue:#00748c;
-$green:#77871c;
-$dgrey:#555559;
-$mgrey:#9fa1a1;
-$lgrey:mix($dgrey,#fff,25%);
-$red: #E84A37;
+$orange: #f7971c;
+$yellow: #f9be00;
+$blue: #00748c;
+$green: #77871c;
+$almostblack: #231f20;
+$dgrey: #555559;
+$mgrey: #9fa1a1;
+$lgrey: mix($dgrey, #fff, 25%);
+$red: #e84a37;
 
 //Transitions
-$global-transition-time:200ms;
-$transition-all:all $global-transition-time ease;
-$transition-color:color $global-transition-time ease;
-$transition-opacity:opacity $global-transition-time ease;
+$global-transition-time: 200ms;
+$transition-all: all $global-transition-time ease;
+$transition-color: color $global-transition-time ease;
+$transition-opacity: opacity $global-transition-time ease;
+$transition-padding: padding $global-transition-time ease;
 $transition-position:
   top $global-transition-time ease,
   right $global-transition-time ease, 
@@ -50,21 +52,21 @@ $lap-break: 46em;
 $desk-break: 64em;
 $wall-break: 75em;
 
-$screen: "only screen";
+$screen: 'only screen';
 
-$landscape: "#{$screen} and (orientation: landscape)";
-$portrait: "#{$screen} and (orientation: portrait)";
+$landscape: '#{$screen} and (orientation: landscape)';
+$portrait: '#{$screen} and (orientation: portrait)';
 
 $hand-up: $screen;
-$hand-only: "#{$screen} and (max-width: #{$lap-break})";
+$hand-only: '#{$screen} and (max-width: #{$lap-break})';
 
-$baby-lap-up: "#{$screen} and (min-width:#{$baby-lap-break})";
-$baby-lap-only: "#{$screen} and (min-width:#{$baby-lap-break}) and (max-width:#{$lap-break})";
+$baby-lap-up: '#{$screen} and (min-width:#{$baby-lap-break})';
+$baby-lap-only: '#{$screen} and (min-width:#{$baby-lap-break}) and (max-width:#{$lap-break})';
 
-$lap-up: "#{$screen} and (min-width:#{$lap-break})";
-$lap-only: "#{$screen} and (min-width:#{$lap-break}) and (max-width:#{$desk-break})";
+$lap-up: '#{$screen} and (min-width:#{$lap-break})';
+$lap-only: '#{$screen} and (min-width:#{$lap-break}) and (max-width:#{$desk-break})';
 
-$desk-up: "#{$screen} and (min-width:#{$desk-break})";
-$desk-only: "#{$screen} and (min-width:#{$desk-break}) and (max-width:#{$wall-break})";
+$desk-up: '#{$screen} and (min-width:#{$desk-break})';
+$desk-only: '#{$screen} and (min-width:#{$desk-break}) and (max-width:#{$wall-break})';
 
-$wall-up: "#{$screen} and (min-width:#{$wall-break})";
+$wall-up: '#{$screen} and (min-width:#{$wall-break})';

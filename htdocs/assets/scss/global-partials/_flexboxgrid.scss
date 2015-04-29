@@ -9,28 +9,34 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin:0 auto;
-  max-width:100%;
-  position:relative;
-  width:$row-width;
+  margin: 0 auto;
+  max-width: 100%;
+  position: relative;
+  width: $row-width;
+
+  &.reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: row-reverse;
+  }
+
+  .constrained-row & {
+    width: $row-width;
+  }
 }
 
-.row.reverse {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: row-reverse;
-}
 
 .column {
   display: flex;
   flex-direction: column;
+  
+  &.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: column-reverse;
+  }
 }
 
-.column.reverse {
-  display: flex;
-  flex-direction: column-reverse;
-  flex-wrap: column-reverse;
-}
 
 .column,
 .column-1--hand,
@@ -60,8 +66,9 @@
 .offset-12--hand {
   box-sizing: border-box;
   padding: 0 $column-gutter/2;
-  img{
-    max-width:100%;
+  
+  img {
+    max-width: 100%;
   }
 }
 

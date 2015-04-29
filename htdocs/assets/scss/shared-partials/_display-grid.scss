@@ -1,0 +1,54 @@
+.grid-cell {
+  @extend .column-6--hand;
+  @extend .column-4--lap;
+  @extend .column-3--desk;
+  
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+    
+  img {
+//    opacity: .8;
+//    transition: $transition-opacity;
+    width: 100%;
+  }
+  
+  .caption {
+    background: rgba($blue, .35);
+    bottom: 0;
+    color: #fff;
+    display: table-cell;
+    font-size: 1.8rem;
+    height: 100%;
+    left: 0;
+    line-height: 1.5rem;
+    margin: 0;
+    opacity: 0;
+    padding-bottom: .75rem;
+    padding-left: .5rem;
+    padding-right: 1rem;
+    padding-top: 70%;
+    position: absolute;
+//    text-shadow: 1px 1px 3px rgba(#000, .75);
+    transition: $transition-opacity;
+    vertical-align: bottom;
+    width: 100%;
+    z-index: $z-caption;
+    
+    @media #{$lap-up} {
+      font-size: 1.5rem;
+      padding-top: 9rem;      
+    }
+    
+    @media #{$desk-up} {
+      padding-top: 6rem;      
+    }
+  }
+  
+  &:hover {
+    
+    .caption {
+      opacity: 1;
+    }
+  }
+}
