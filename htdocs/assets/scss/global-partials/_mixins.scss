@@ -1,14 +1,25 @@
-@mixin plain-list() {
-  margin: 0;
-  padding: 0;
-  
-  li {
-    list-style: none;
-  }  
+%font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@mixin inline-list() {
-  @include plain-list();
+%plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+%inline-list {
+  @extend %plain-list;
   
   li {
     display: inline;
@@ -33,8 +44,41 @@
   padding: 1em 0 2em;
 }
 
-//for less faux-bold looking fonts in Webkit
-@mixin font-smoothing() {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+// Triangles
+
+%all-triangles {
+  height: 0; 
+  width: 0; 
+}
+
+@mixin triangle-up($color, $size:1em) {
+  @extend %all-triangles;
+
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-bottom: $size solid $color;
+}
+
+@mixin triangle-down($color, $size:1em) {
+  @extend %all-triangles;
+  
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+}
+
+@mixin triangle-right($color, $size:1em) {
+  @extend %all-triangles;
+  
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: $size solid $color;
+}
+
+@mixin triangle-left($color, $size:1em) {
+  @extend %all-triangles;
+  
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent; 
+  border-right: $size solid $color; 
 }

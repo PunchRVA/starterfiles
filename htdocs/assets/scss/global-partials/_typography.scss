@@ -1,0 +1,53 @@
+// Typography
+
+$body-font-family: "ff-dagny-web-pro", sans-serif;
+$body-font-size: rem-calc(18);
+$body-line-height: 1.2rem;
+$body-font: 400 #{$body-font-size}/1.2em $body-font-family;
+
+$accent-font-family: "ff-tisa-web-pro", serif;
+$accent-font: italic 400 #{$body-font-size}/1.2em $accent-font-family;
+
+$heading-font-weight: 700 !default;
+
+$header-size: (
+  h1: 1.75em,
+  h2: 1.5em,
+  h3: 1.17em,
+  h4: 1em,
+  h5: .83em,
+  h6: .75em
+);
+
+$header-margin: (
+  h1: $body-line-height 0,
+  h2: $body-line-height/2 0,
+  h3: $body-line-height/2 0,
+  h4: $body-line-height/2 0,
+  h5: $body-line-height/2 0,
+  h6: $body-line-height/2 0
+);
+
+$default-color: #000 !default;
+
+// Addresses margins handled incorrectly in IE6/7
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font: $body-font;
+}
+
+@each $h in h1, h2, h3, h4, h5, h6 {
+  #{$h} {
+    @if $h == h1 {
+      font-family: $accent-font-family;
+      // color: color(fig);
+    }
+    font-size: map-get($header-size, #{$h});
+    font-weight: $heading-font-weight;
+    margin: map-get($header-margin, #{$h});
+  }
+}

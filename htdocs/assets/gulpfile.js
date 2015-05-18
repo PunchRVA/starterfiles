@@ -15,11 +15,21 @@ var gulp = require('gulp'),
     del = require('del'),
     scsslint = require('gulp-scss-lint');
 
+// Stop Gulp from crashing on every SASS error
+// via: http://stackoverflow.com/questions/23971388/prevent-errors-from-breaking-crashing-gulp-watch/23973536#23973536
+function swallowError (error) {
+    //If you want details of the error in the console
+    console.log(error.toString());
+
+    this.emit('end');
+}
+
 // do CSS stuff
 gulp.task('styles', function() {
   return gulp.src('scss/**/*.scss')
     .pipe(scsslint({config: 'scsslint.yml'}))
     .pipe(sass({ style: 'expanded' }))
+    .on('error', swallowError)
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('css'))
     .pipe(rename({suffix: '.min'}))
@@ -55,11 +65,6 @@ gulp.task('clean', function(cb) {
     del(['css', 'js'], cb)
 });
 
-// default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'scripts_copy');
-});
-
 // watch task
 gulp.task('watch', function() {
 
@@ -76,3 +81,6 @@ gulp.task('watch', function() {
   gulp.watch(['css/**','js/**', '*.php']).on('change', livereload.changed);
 
 });
+
+// default task
+gulp.task('default', ['watch']);
