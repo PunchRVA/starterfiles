@@ -1,16 +1,17 @@
 // Global Partials //
+@import 'global-partials/rem-calc';
 @import 'global-partials/functions';
 @import 'global-partials/vars';
 @import 'global-partials/mixins';
 @import 'global-partials/flexboxgrid';
 @import 'global-partials/normalize';
+@import 'global-partials/zindex';
+@import 'global-partials/typography';
 
 // Shared Partials //
 @import 'shared-partials/display-grid';
 
 // Application Partials //
-@import 'app-partials/zindex';
-@import 'app-partials/typography';
 // @import 'app-partials/header';
 // @import 'app-partials/hero';
 // @import 'app-partials/footer';
