@@ -27,7 +27,8 @@
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-scss-lint": "*",
-    "gulp-uglify": "*"
+    "gulp-uglify": "*",
+    "node-sass": "*"
   },
   "database": ""
 }
