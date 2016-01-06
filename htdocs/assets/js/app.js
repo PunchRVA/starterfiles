@@ -1,74 +1,3 @@
-/*globals Node:true, NodeList:true*/
-
-$ = (function (document, window, $) {
-  // Node covers all elements, but also the document objects
-  var node = Node.prototype,
-      nodeList = NodeList.prototype,
-      forEach = 'forEach',
-      trigger = 'trigger',
-      each = [][forEach],
-      // note: createElement requires a string in Firefox
-      dummy = document.createElement('i');
-
-  nodeList[forEach] = each;
-
-  // we have to explicitly add a window.on as it's not included
-  // in the Node object.
-  window.on = node.on = function (event, fn) {
-    this.addEventListener(event, fn, false);
-
-    // allow for chaining
-    return this;
-  };
-
-  nodeList.on = function (event, fn) {
-    this[forEach](function (el) {
-      el.on(event, fn);
-    });
-    return this;
-  };
-
-  // we save a few bytes (but none really in compression)
-  // by using [trigger] - really it's for consistency in the
-  // source code.
-  window[trigger] = node[trigger] = function (type, data) {
-    // construct an HTML event. This could have
-    // been a real custom event
-    var event = document.createEvent('HTMLEvents');
-    event.initEvent(type, true, true);
-    event.data = data || {};
-    event.eventName = type;
-    event.target = this;
-    this.dispatchEvent(event);
-    return this;
-  };
-
-  nodeList[trigger] = function (event) {
-    this[forEach](function (el) {
-      el[trigger](event);
-    });
-    return this;
-  };
-
-  $ = function (s) {
-    // querySelectorAll requires a string with a length
-    // otherwise it throws an exception
-    var r = document.querySelectorAll(s || '☺'),
-        length = r.length;
-    // if we have a single element, just return that.
-    // if there's no matched elements, return a nodeList to chain from
-    // else return the NodeList collection from qSA
-    return length == 1 ? r[0] : r;
-  };
-
-  // $.on and $.trigger allow for pub/sub type global
-  // custom events.
-  $.on = node.on.bind(dummy);
-  $[trigger] = node[trigger].bind(dummy);
-
-  return $;
-})(document, this);
-
 /*! apollo.js v1.7.0 | (c) 2014 @toddmotto | https://github.com/toddmotto/apollo */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
@@ -155,30 +84,65 @@ $ = (function (document, window, $) {
 
 // stuff for all pages
 
+/* globals apollo: false, Modernizr: false */
+
 // establish variables
-var nav = $('.nav-main');
-var navToggleButton = $('.nav-toggle');
+var nav = document.getElementsByClassName('main-nav__list')[0],
+  navToggleButton = document.getElementsByClassName('main-nav__toggle')[0];
 
 //nav toggle function
 var navToggle = function(e){
+  'use strict';
+
   apollo.toggleClass(nav, 'closed open');
   e.preventDefault();
   e.stopPropagation();
-}
+};
 
-// if screen is smaller than 'hand' size
-if(Modernizr.mq('only all and (max-width: 46em)')){
+// if screen is smaller than 'desk' size
+if(Modernizr.mq('only all and (max-width: 64em)')){
 
   // show toggle and collapse menu
   apollo.addClass(nav, 'active closed');
 
   // add touch/click event
-  $('.nav-toggle').on('touchstart', function(e){
-    navToggle(e);
-  });
+  navToggleButton.addEventListener('touchstart', function(e){
+    'use strict';
 
-  $('.nav-toggle').on('click', function(e){
     navToggle(e);
-  });
+  }, false);
 
+  navToggleButton.addEventListener('click', function(e){
+    'use strict';
+
+    navToggle(e);
+  }, false);
+
+}
+
+// if screen is desk size or larger
+
+if(Modernizr.mq('only all and (min-width: 64em)')) {
+
+  // check if scrolled
+  var scrolled = false,
+      html = document.getElementsByTagName("html")[0],
+      body = document.getElementsByTagName("body")[0];
+
+  var checkForScroll = function () {
+    'use strict';
+
+    if (body.scrollTop > 0) {
+      scrolled = true;
+      apollo.addClass(html, 'scrolled');
+    }else{
+      scrolled = false;
+      apollo.removeClass(html, 'scrolled');
+    }
+    
+    window.requestAnimationFrame(checkForScroll);
+    
+  };
+
+  window.requestAnimationFrame(checkForScroll);
 }

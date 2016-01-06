@@ -699,7 +699,6 @@ button::-moz-focus-inner {
   padding: 0; }
 
 .button {
-  background-color: #00748c;
   border: 1px solid #fff;
   color: #fff;
   display: block;
@@ -718,9 +717,6 @@ button::-moz-focus-inner {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
-  .button:hover,
-  .button:focus {
-    background-color: #77871c; }
   @media only screen and (min-width: 64em) {
     .button {
       padding-bottom: 0.6rem;
@@ -729,19 +725,6 @@ button::-moz-focus-inner {
       padding-top: 0.6rem; } }
   .button.shadow {
     border: 0; }
-  .button--inactive {
-    border-color: #6c6e6e !important;
-    color: #6c6e6e !important; }
-  .button--gogo {
-    border-color: #77871c !important;
-    color: #77871c !important; }
-  .button--warning {
-    border-color: #e84a37 !important;
-    color: #e84a37 !important; }
-    .button--warning:hover,
-    .button--warning:focus {
-      border-color: #d42c18 !important;
-      color: #d42c18 !important; }
 
 .svg-load {
   display: none;
