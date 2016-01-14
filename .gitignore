@@ -6,6 +6,7 @@ config.local.php
 # Sublime Text Files #
 ######################
 *.sublime*
+!template.sublime-project
 
 # CMS Stuff #
 ######################
