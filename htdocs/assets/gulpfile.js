@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del'),
-    scsslint = require('gulp-scss-lint');
+    sassLint = require('gulp-sass-lint');
 
 // Stop Gulp from crashing on every SASS error
 // via: http://stackoverflow.com/questions/23971388/prevent-errors-from-breaking-crashing-gulp-watch/23973536#23973536
@@ -27,7 +27,9 @@ function swallowError (error) {
 // do CSS stuff
 gulp.task('styles', function() {
   return gulp.src('scss/**/*.scss')
-    .pipe(scsslint({config: 'scsslint.yml'}))
+    //.pipe(sassLint())
+    //.pipe(sassLint.format())
+    //.pipe(sassLint.failOnError())
     .pipe(sass({ style: 'expanded' }))
     .on('error', swallowError)
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
@@ -78,7 +80,7 @@ gulp.task('watch', function() {
   livereload.listen();
 
   // Watch any files in dist/, reload on change
-  gulp.watch(['css/**','js/**', '*.php', '../../templates/**/*.html']).on('change', livereload.changed);
+  gulp.watch(['css/**','js/**', '../../**/*.php', '../../**/*.html']).on('change', livereload.changed);
 
 });
 

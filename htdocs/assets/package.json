@@ -26,8 +26,9 @@
     "gulp-notify": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
-    "gulp-scss-lint": "*",
+    "gulp-sass-lint": "*",
     "gulp-uglify": "*",
+    "jshint": "2.8.0",
     "node-sass": "*"
   },
   "database": ""

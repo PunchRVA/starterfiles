@@ -2117,6 +2117,9 @@ button::-moz-focus-inner {
   .button.shadow {
     border: 0; }
 
+.demo__item {
+  background-color: #999; }
+
 .svg-load {
   display: none;
   visibility: hidden; }

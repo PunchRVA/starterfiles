@@ -16,6 +16,8 @@
 // Application Partials //
 @import 'app-partials/components/placeholder';
 
+@import 'style-guide/style-guide';
+
 .svg-load {
   display: none;
   visibility: hidden;
@@ -25,3 +27,4 @@ svg {
   display: inline-block;
   max-width: 100%;
 }
+

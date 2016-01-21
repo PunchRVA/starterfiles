@@ -1,5 +1,11 @@
 //SASS-ified and autoprefixer-ready version of this one by @dam: http://flexboxgrid.com/
 
+body {
+  @media #{$baby} {
+    
+  }
+}
+
 .grid-margin {
   box-sizing: border-box;
   padding: 0 2rem;
@@ -65,7 +71,7 @@
 .offset-11--hand,
 .offset-12--hand {
   box-sizing: border-box;
-  padding: 0 $column-gutter/2;
+  padding: 0 $column-gutter / 2;
   
   img {
     max-width: 100%;
