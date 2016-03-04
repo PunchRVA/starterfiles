@@ -244,8 +244,14 @@
       <!-- 
       -->&lt;div class="grid__item" data-grid="3/12"&gt; … &lt;/div&gt;
       <!-- 
+<<<<<<< HEAD
       -->&lt;div class="grid__item" data-grid="3/12"&gt; … &lt;/div&gt;
 &lt;/div&gt;</pre>
+=======
+      -->&lt;div class="grid__item" data-grid="3/12"&gt; … &lt;/div&gt;<!-- 
+      
+      -->&lt;/div&gt;</pre>
+>>>>>>> 05218a51a571630c01094240ce915e8d7b92efa8
       
       <h4 id="gridItemMod">Grid item modifiers</h4>
       <h5>Options</h5>
