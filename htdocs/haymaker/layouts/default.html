@@ -2,7 +2,7 @@
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -12,22 +12,34 @@
     <title>{{ title ensure_right=" / " }}{{ site_name }}</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ theme:css }}">
+  <script src="/assets/js/modernizr.js"></script>
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 
 <body>
 
-    {{ partial:nav }}
+  {{ partial:nav }}
 
-    {{ template_content }}
+  {{ template_content }}
 
-    <footer class="page">
-        <p class="copyright">&copy; {{ now format="Y" }} {{ author_name }}</p>
-        <p class="tribute">Built with Statamic</p>
-    </footer>
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="{{ theme:js }}"></script>
+  <script src="{{ theme:js }}"></script>
+  
+  <script>
+    var loc = document.location.host
+    if ( 
+        loc.slice(0,2) == "d." || 
+        loc.slice(0,3) == "10." || 
+        loc.slice(-6) == ".local" ||
+        document.location.host.slice(0,9) == "localhost"
+        ) {
+          var s = document.createElement('script');
+          loc = loc.search(':') > 0 ? loc.split(':')[0] : loc
+          s.src = "//"+loc+":35729/livereload.js";
+          document.body.appendChild(s);
+        }
+  </script>
 
 </body>
 </html>
