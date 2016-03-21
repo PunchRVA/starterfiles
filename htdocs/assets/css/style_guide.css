@@ -2117,6 +2117,21 @@ button::-moz-focus-inner {
   .button.shadow {
     border: 0; }
 
+.demo__item {
+  background-color: #999;
+  padding: .5em; }
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+pre {
+  background-color: #ddd;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 1em; }
+
 .svg-load {
   display: none;
   visibility: hidden; }

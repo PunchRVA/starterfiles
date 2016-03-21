@@ -1,0 +1,27 @@
+// Global Partials //
+@import 'global-partials/rem-calc';
+@import 'global-partials/functions';
+@import 'global-partials/vars';
+@import 'global-partials/mixins';
+@import 'global-partials/gridilydidily';
+// @import 'global-partials/flexboxgrid';
+@import 'global-partials/normalize';
+@import 'global-partials/zindex';
+@import 'global-partials/typography';
+
+// Shared Partials //
+// @import 'shared-partials/display-grid';
+@import 'shared-partials/button';
+
+// Application Partials //
+@import 'app-partials/components/placeholder';
+
+.svg-load {
+  display: none;
+  visibility: hidden;
+}
+
+svg {
+  display: inline-block;
+  max-width: 100%;
+}

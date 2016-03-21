@@ -1,0 +1,13 @@
+.grid-cell {
+  @extend .column-6--hand;
+  @extend .column-4--lap;
+  @extend .column-3--desk;
+  
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+    
+  img {
+    width: 100%;
+  }
+}
