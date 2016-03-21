@@ -20,6 +20,15 @@
 
 <body>
 
+<div class="test">
+  <p>.test</p>
+  <div class="test__sub-thing">
+    <p>.test__sub-thing</p>
+  </div>
+</div>
+
+  <script src="/assets/js/classList.min.js"></script>
+  
   <script src="/assets/js/app.min.js"></script>
 
   <script>

@@ -70,7 +70,6 @@ h1, h2, h3, h4, h5, h6, .button {
 .column-4--hand,
 .column-5--hand,
 .column-6--hand,
-.grid-cell,
 .column-7--hand,
 .column-8--hand,
 .column-9--hand,
@@ -99,7 +98,6 @@ h1, h2, h3, h4, h5, h6, .button {
   .column-4--hand img,
   .column-5--hand img,
   .column-6--hand img,
-  .grid-cell img,
   .column-7--hand img,
   .column-8--hand img,
   .column-9--hand img,
@@ -151,7 +149,7 @@ h1, h2, h3, h4, h5, h6, .button {
       -ms-flex: 0 0 41.667%;
           flex: 0 0 41.667%; }
 
-.column-6--hand, .grid-cell {
+.column-6--hand {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 50%;
       -ms-flex: 0 0 50%;
@@ -307,7 +305,7 @@ h1, h2, h3, h4, h5, h6, .button {
     -webkit-flex: 0 0 25%;
         -ms-flex: 0 0 25%;
             flex: 0 0 25%; }
-  .column-4--lap, .grid-cell {
+  .column-4--lap {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 33.333%;
         -ms-flex: 0 0 33.333%;
@@ -393,7 +391,7 @@ h1, h2, h3, h4, h5, h6, .button {
     -webkit-flex: 0 0 16.667%;
         -ms-flex: 0 0 16.667%;
             flex: 0 0 16.667%; }
-  .column-3--desk, .grid-cell {
+  .column-3--desk {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 25%;
         -ms-flex: 0 0 25%;
@@ -670,13 +668,6 @@ blockquote {
   margin-bottom: 1.2rem;
   margin-top: 0; }
 
-.grid-cell {
-  line-height: 0;
-  overflow: hidden;
-  position: relative; }
-  .grid-cell img {
-    width: 100%; }
-
 [type="submit"],
 [type="reset"],
 [type="button"],
@@ -725,6 +716,9 @@ button::-moz-focus-inner {
       padding-top: 0.6rem; } }
   .button.shadow {
     border: 0; }
+
+.test {
+  color: #f7971c; }
 
 .svg-load {
   display: none;

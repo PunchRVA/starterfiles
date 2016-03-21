@@ -1,19 +1,21 @@
 // Global Partials //
-@import 'global-partials/rem-calc';
-@import 'global-partials/functions';
-@import 'global-partials/vars';
-@import 'global-partials/mixins';
-@import 'global-partials/flexboxgrid';
-@import 'global-partials/normalize';
-@import 'global-partials/zindex';
-@import 'global-partials/typography';
+@import 'global/rem-calc';
+@import 'global/functions';
+@import 'global/vars';
+@import 'global/mixins';
+@import 'global/flexboxgrid';
+@import 'global/normalize';
+@import 'global/zindex';
+@import 'global/typography';
 
 // Shared Partials //
-@import 'shared-partials/display-grid';
-@import 'shared-partials/button';
+// @import 'components/display-grid';
+@import 'components/button';
+@import 'components/test-extend';
+@import 'components/test-placeholder';
 
 // Application Partials //
-@import 'app-partials/components/placeholder';
+@import 'website/placeholder';
 
 .svg-load {
   display: none;

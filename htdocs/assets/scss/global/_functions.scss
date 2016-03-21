@@ -11,6 +11,7 @@
 
 // get full media query based on breakpoints defined in $breakpoints map
 // not currently working
+// the map '$breakpoints' is also not currently in starterfiles
 @function mq($min:'baby-lap', $max:null, $media:'screen') {
 
   $min-break: map-get($breakpoints, #{$min});

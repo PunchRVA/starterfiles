@@ -1,0 +1,11 @@
+// testing sass extending placeholders
+
+%test {
+  color: $orange;
+
+  &__sub-thing {
+    color: $black;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
