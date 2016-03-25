@@ -13,7 +13,9 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del'),
-    sassLint = require('gulp-sass-lint');
+    sassLint = require('gulp-sass-lint'),
+    imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant');
 
 // Stop Gulp from crashing on every SASS error
 // via: http://stackoverflow.com/questions/23971388/prevent-errors-from-breaking-crashing-gulp-watch/23973536#23973536
@@ -66,6 +68,23 @@ gulp.task('scripts_copy', function(){
 gulp.task('clean', function(cb) {
     del(['css', 'js'], cb)
 });
+
+
+// reduce image size
+// More customizations at https://github.com/sindresorhus/gulp-imagemin
+gulp.task('images', () => {
+  return gulp.src('images/*')
+    .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [
+            {removeViewBox: false},
+            {cleanupIDs: false}
+        ],
+        use: [pngquant()]
+    }))
+    .pipe(gulp.dest('img/'));
+});
+
 
 // watch task
 gulp.task('watch', function() {

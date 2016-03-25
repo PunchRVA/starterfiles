@@ -29,7 +29,10 @@
     "gulp-sass-lint": "*",
     "gulp-uglify": "*",
     "jshint": "2.8.0",
-    "node-sass": "*"
+    "node-sass": "*",
+    "imagemin":"*",
+    "gulp-imagemin":"*",
+    "imagemin-pngquant":"*"
   },
   "database": ""
 }
