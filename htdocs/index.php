@@ -30,6 +30,11 @@
   <script src="/assets/js/classList.min.js"></script>
   
   <script src="/assets/js/app.min.js"></script>
+  
+  <!-- via: https://github.com/chuckcarpenter/REM-unit-polyfill -->
+  <!--[if lte IE 9]>
+  <script src="/assets/js/rem.min.js"></script>
+  <![endif]-->
 
   <script>
     var loc = document.location.host
