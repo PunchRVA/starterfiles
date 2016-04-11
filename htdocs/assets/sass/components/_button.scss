@@ -1,9 +1,9 @@
 // Styles for buttons, real and faux
 
 // Reset `button` and button-style `input` default styles
-[type="submit"],
-[type="reset"],
-[type="button"],
+[type='submit'],
+[type='reset'],
+[type='button'],
 button {
   // for input
   appearance: button;
@@ -17,18 +17,12 @@ button {
   user-select: none;
 }
 
-input::-moz-focus-inner,
-button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
 @mixin button() {
   @extend %font-smoothing;
 
   // background-color: $blue;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid $white;
+  color: $white;
   display: block;
   font-family: $accent-font-family;
   font-weight: $accent-font-weight;
