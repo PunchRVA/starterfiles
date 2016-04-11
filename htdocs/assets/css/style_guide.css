@@ -2067,9 +2067,9 @@ blockquote {
   margin-bottom: 1.2rem;
   margin-top: 0; }
 
-[type="submit"],
-[type="reset"],
-[type="button"],
+[type='submit'],
+[type='reset'],
+[type='button'],
 button {
   -webkit-appearance: button;
      -moz-appearance: button;
@@ -2084,11 +2084,6 @@ button {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none; }
-
-input::-moz-focus-inner,
-button::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
 
 .button {
   border: 1px solid #fff;
