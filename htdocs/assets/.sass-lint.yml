@@ -13,6 +13,7 @@
 
 files:
   include: '**/*.scss'
+  exclude: 'gridilydidily'
 options:
   formatter: stylish
   merge-default-rules: false

@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del'),
-    sassLint = require('gulp-sass-lint'),
+    scsslint = require('gulp-scss-lint'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant');
 
@@ -29,9 +29,7 @@ function swallowError (error) {
 // do CSS stuff
 gulp.task('styles', function() {
   return gulp.src('sass/**/*.scss')
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
+    .pipe(scsslint({config: 'scsslint.yml'}))
     .pipe(sass({ style: 'expanded' }))
     .on('error', swallowError)
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
@@ -72,7 +70,7 @@ gulp.task('clean', function(cb) {
 
 // reduce image size
 // More customizations at https://github.com/sindresorhus/gulp-imagemin
-gulp.task('images', () => {
+gulp.task('images', function() {
   return gulp.src('images/*')
     .pipe(imagemin({
         progressive: true,
