@@ -35,7 +35,7 @@ body {
 .column {
   display: flex;
   flex-direction: column;
-  
+
   &.reverse {
     display: flex;
     flex-direction: column-reverse;
@@ -72,7 +72,7 @@ body {
 .offset-12--hand {
   box-sizing: border-box;
   padding: 0 $column-gutter / 2;
-  
+
   img {
     max-width: 100%;
   }

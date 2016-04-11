@@ -1,7 +1,7 @@
 // Useful Functions // 
 
 // get a column width in percent or rem ($fixed:true)
-@function column-width($cols:1, $fixed:false) {
+@function column-width($cols: 1, $fixed: false) {
   @if ($fixed) {
     @return $cols/$total-columns * $row-width;
   } @else {
@@ -11,7 +11,7 @@
 
 // get full media query based on breakpoints defined in $breakpoints map
 // not currently working
-@function mq($min:'baby-lap', $max:null, $media:'screen') {
+@function mq($min: 'baby-lap', $max: null, $media: 'screen') {
 
   $min-break: map-get($breakpoints, #{$min});
 
