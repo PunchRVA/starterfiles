@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
     del = require('del'),
-    scsslint = require('gulp-scss-lint'),
+    scsslint = require('gulp-sass-lint'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant');
 
