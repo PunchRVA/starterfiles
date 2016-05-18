@@ -22,7 +22,7 @@
     "gulp-concat": "*",
     "gulp-jshint": "*",
     "gulp-livereload": "*",
-    "gulp-minify-css": "*",
+    "gulp-clean-css": "*",
     "gulp-notify": "*",
     "gulp-rename": "*",
     "gulp-sass": "*",
