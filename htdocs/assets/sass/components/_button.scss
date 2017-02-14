@@ -48,11 +48,11 @@ button {
     padding-top: $body-line-height/2;    
   }
 
-  &.shadow {
-    @extend %standard-box-shadow;
+  // &.shadow {
+  //   @extend %standard-box-shadow;
 
-    border: 0;
-  }
+  //   border: 0;
+  // }
 }
 
 .button {
