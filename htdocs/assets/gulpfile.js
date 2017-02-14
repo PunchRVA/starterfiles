@@ -3,7 +3,8 @@
 // get all the plugins
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    postcss = require('gulp-postcss');
+    autoprefixer = require('autoprefixer'),
     minifycss = require('gulp-clean-css'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
@@ -32,9 +33,7 @@ gulp.task('styles', function() {
     .pipe(scsslint({config: 'scsslint.yml'}))
     .pipe(sass({ style: 'expanded' }))
     .on('error', swallowError)
-    .pipe(autoprefixer({
-      browsers: ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios > 5', 'android 4'],
-    }))
+    .pipe(postcss([ autoprefixer() ]))
     .pipe(gulp.dest('css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
