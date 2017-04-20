@@ -39,5 +39,5 @@
     "gulp-imagemin":"*",
     "imagemin-pngquant":"*"
   },
-  "database": "",
+  "database": ""
 }
